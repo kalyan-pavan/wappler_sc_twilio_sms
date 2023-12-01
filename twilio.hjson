@@ -1,0 +1,88 @@
+[
+  {
+    "type": "twilio_send_sms",
+    "module": "twilio",
+    "action": "twilio_send_sms",
+    "groupTitle": "SMS",
+    "groupIcon": "fas fa-comment-alt comp-exec",
+    "title": "Send SMS (Twilio)",
+    "icon": "fas fa-sms comp-exec",
+    "usedModules": {
+      "node": {
+        twilio: "^3.84.1"
+      }
+    },
+    "properties": [
+      {
+        "group": "Log",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "recipientMobile",
+            "optionName": "recipient_mobile",
+            "title": "Recipient Mobile",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Enter Recipient mobile here."
+          },
+          {
+            "name": "message_body",
+            "optionName": "message_body",
+            "title": "Message",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "The SMS message body to be sent."
+          }
+        ]
+      },
+      {
+        "group": "Twilio Config",
+        "variables": [
+          {
+            "name": "accountSid",
+            "optionName": "account_sid",
+            "title": "Account SID",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Account SID to be entered here."
+          },
+          {
+            "name": "authToken",
+            "optionName": "auth_token",
+            "title": "Auth Token",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Authentication Token to be entered here."
+          },
+          {
+            "name": "senderMobile",
+            "optionName": "sender_mobile",
+            "title": "Sender Mobile",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Enter sender mobile number here."
+          }
+        ]
+      },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'}
+        ]
+      }
+    ]
+  }
+]
